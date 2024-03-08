@@ -1,0 +1,196 @@
+/* import fonts POPPINS */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* General rules */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url(rsc/BGK.jpg);
+  background-size: auto;
+}
+body *{
+  transition: all 200ms ease-in;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+button,
+span,
+b {
+  font-family: "Poppins", sans-serif;
+  color: var(--primary);
+  margin: 0;
+}
+svg{
+    fill: var(--primary);
+    transition: 10ms;
+}
+
+:root {
+  --primary: #959bb8;
+}
+
+/* containers */
+.mainFather {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.mainChild {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 0rem 2rem;
+  width: 50%;
+}
+/* titles */
+.titleContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.titlePomodoro {
+  text-align: center;
+  font-size: calc(1vw + 3rem);
+  font-weight: 200;
+}
+/* first container, counter */
+.firstContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg,rgba(102, 108, 164, 0.33) 0%,rgba(38, 41, 62, 0) 100%);
+  backdrop-filter: blur(4px);
+  border-radius: 40px;
+  border: 2px solid rgba(78, 78, 110, 0.3);
+}
+.firstContainer h1 {
+  font-size: calc(4vw + 10rem);
+  -webkit-text-stroke: 2px var(--primary);
+  background: linear-gradient(180deg, #7987cd 0%, rgba(113, 128, 205, 0) 49.8%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* second container, all the rest of the buttons */
+.secondContainer {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+}
+
+/* first colum start and pause */
+.firstColumn, .secondColumn, .thirdColumn{
+  display: flex;
+  justify-content: center;
+  width: 33%;
+  flex-wrap: wrap;
+  gap: 30px;
+  text-align: center;
+}
+.startButton,
+.pauseButton, 
+.breakButton, 
+.resetButton {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  background: linear-gradient(180deg,rgba(102, 108, 164, 0.33) 0%,rgba(38, 41, 62, 0) 100%);
+  backdrop-filter: blur(3px);
+  border-radius: 20px;
+  border: 2px solid rgba(78, 78, 110, 0.3);
+}
+.startButton h2 {
+  font-weight: 300;
+  letter-spacing: 5px;
+}
+.pauseButton h2 {
+  font-weight: 300;
+  letter-spacing: 5px;
+}
+/* second column */
+.secondColumn{
+    display: flex;
+    background: linear-gradient(180deg,rgba(102, 108, 164, 0.33) 0%,rgba(38, 41, 62, 0) 100%);
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+    border: 2px solid rgba(78, 78, 110, 0.3);
+    align-items: center;
+    flex-direction: column;
+}
+.secondColumn div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: calc(2rem);
+    text-align: center;
+}
+.secondColumn div:nth-child(1) h2{
+    font-weight: 300;
+}
+.secondColumn div:nth-child(2){
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+/* third column */
+.breakButton h2{
+    font-weight: 300;
+    font-size: 2.6rem;
+}
+.breakButton div:nth-child(2){
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+/* hovers */
+.startButton:hover,
+.pauseButton:hover, 
+.breakButton:hover, 
+.resetButton:hover, 
+.secondColumn:hover{
+    transform: translateY(-5px);
+    background-color: #959bb8;
+    cursor: pointer;
+}
+.startButton:hover,
+.pauseButton:hover, 
+.breakButton:hover, 
+.resetButton:hover, 
+.secondColumn:hover :root{
+    --primary: #15131d;
+}
+.secondColumn:hover div *{
+    color: #15131d;
+}
+/* media querys */
+@media only screen and (max-width: 1524px) {
+  .mainChild {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .mainChild {
+    width: 100%;
+  }
+}

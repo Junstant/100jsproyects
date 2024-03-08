@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 Age calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="mainFather">
+      <div class="mainChild">
+        <div class="leftContainer">
+          <div>
+            <h1><b>Age</b> calculator</h1>
+            <h2>Enter your date of birth</h2>
+          </div>
+          <div>
+            <label for="dateInp">Date of birth:</label>
+            <input type="date" class="dateInput" name="dateInp" />
+          </div>
+          <div class="btnContainer">
+            <button onclick="dateCalculate()">Calculate</button>
+          </div>
+        </div>
+        <div class="rightContainer">
+            <div>
+          <h1 class="dateResult"></h1>
+          <h2 class="yearsText"></h2>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

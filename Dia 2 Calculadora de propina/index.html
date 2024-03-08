@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 tip calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="mainFather">
+      <div class="mainChild">
+        <div class="calculatorContainer">
+          <div>
+            <h1><b>TIP</b> Calculator</h1>
+            <h2>ENTER THE VALUE AND PERCENTAGE</h2>
+          </div>
+          <div>
+            <label for="BILL"><p>BILL AMOUNT:</p></label>
+            <input type="BILL" class="billInput input" placeholder="$ 30.00" />
+            <label for="percentage"><p>TIP PERCENTAGE:</p></label>
+            <input type="percentage"class="percentageInput input" placeholder="10%" />
+          </div>
+          <div>
+            <button class="calculateButton" onclick="calculateTip()">
+              CALCULATE
+            </button>
+            <h3 class="result"></h3>
+          </div>
+          <div class="imgContainer">
+            <img src="highlights.svg" alt="highlights" />
+          </div>
+        </div>
+      </div>
+      <div class="textBgk">
+        <h3 class="resultBgk"></h3>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

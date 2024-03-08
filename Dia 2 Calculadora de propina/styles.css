@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* * main config */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url(BGK.svg);
+  background-size: cover;
+  background-color: #141414;
+  overflow: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+span,
+p {
+  font-family: "Montserrat", Courier, monospace;
+}
+.mainFather {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainChild {
+  width: 100%;
+  margin: 5% 15%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 50rem;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.calculatorContainer {
+  margin: 0px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: all 300ms;
+}
+.calculatorContainer div {
+  width: 100%;
+}
+/* * labels */
+.calculatorContainer label {
+  font-weight: 1 00;
+}
+/* * titles */
+.calculatorContainer h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  text-align: center;
+}
+.calculatorContainer h2 {
+  font-size: 1.5rem;
+  font-weight: 200;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+/* * inputs */
+.input {
+  width: calc(100% - 40px);
+  color: white;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 20px;
+  padding: 25px 20px;
+  background-color: rgba(71, 71, 71, 0.2);
+  font-weight: 300;
+  z-index: 10;
+  margin: 0;
+  transition: all 300ms;
+}
+
+/* * background img */
+.imgContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  height: 100%;
+  z-index: -1;
+}
+.imgContainer img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+/* * button */
+.calculatorContainer button {
+  margin-top: 4rem;
+  padding: 30px 60px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 400ms;
+}
+/* * result */
+.calculatorContainer h3 {
+  font-family: "Poppins", Courier, monospace;
+  font-size: 8rem;
+  margin: 2rem 0rem;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: white;
+  -webkit-text-stroke-width: 1px;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+}
+/* * bgk text */
+.textBgk {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.resultBgk {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  font-size: calc(20vw + 5rem);
+  letter-spacing: 20px;
+  color: transparent;
+  -webkit-text-stroke: white;
+  -webkit-text-stroke-width: 3px;
+  text-align: center;
+  font-family: "Poppins", Courier, monospace;
+  margin-top: 15rem;
+  transition: all 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+/* * hovers */
+.calculatorContainer button:hover {
+  transform: translateY(-5px);
+  background-color: white;
+  color: black;
+  box-shadow: 0px 20px 40px rgba(255, 255, 255, 0.2);
+}
+.input:focus {
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+  color: black;
+  transform: translateY(-5px);
+  background-color: white;
+  box-shadow: 0px 20px 40px rgba(255, 255, 255, 0.2);
+}

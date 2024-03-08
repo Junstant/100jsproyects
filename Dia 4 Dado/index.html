@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 4 dice simulator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="mainFather">
+      <div class="firstChild">
+        <h1>Dice roll</h1>
+        <h1>Simulator</h1>
+        <div><img class="diceImg" src="rsc/dice5.svg" alt="DiceImg" onclick="randomDice()"/></div>
+        <div><button class="rollButton" onclick="randomDice()">Roll dice</button></div>
+      </div>
+      <div class="secondChild">
+        <h1 class="number textAnimation">FIVE</h1>
+      </div>
+      <div class="thirdChild">
+        <h2>History</h2>
+        <div class="diceHistory">
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+/* playfair display */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+/* inria serif */
+@import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+/* default rules */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #d9d9d9;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+label {
+  font-family: "Playfair Display", serif;
+  color: white;
+}
+/* containers */
+.mainFather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.mainFather *{
+    transition: all 300ms ease;
+  }
+.mainChild {
+  display: flex;
+  justify-content: flex-start;
+  background: linear-gradient(
+      289.61deg,
+      rgba(104, 70, 39, 0.5) -1.06%,
+      rgba(0, 0, 0, 0) 69.74%
+    ),
+    url(Rsc/bgk.jpg);
+  background-size: cover;
+  width: 100%;
+  margin: 4vw;
+  flex-wrap: nowrap;
+}
+
+/* container left and right */
+.leftContainer {
+  display: flex;
+  backdrop-filter: blur(12px);
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8.3vw 0;
+  align-content: center;
+  justify-content: center;
+}
+.leftContainer div {
+  width: 100%;
+}
+.rightContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+/* ! left container */
+
+/* texts and headers left container */
+.leftContainer h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+.leftContainer h2 {
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: center;
+  margin-bottom: 5rem;
+  letter-spacing: 5px;
+}
+.leftContainer b {
+  font-size: 3rem;
+  font-weight: 600;
+}
+/*  label input left container*/
+.leftContainer div:nth-child(2){
+    width: 50%;
+  }
+.leftContainer label {
+  display: flex;
+  width: 100%;
+}
+.leftContainer input {
+  display: flex;
+  width: calc(100% - 40px);
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  padding: 20px 20px;
+  border-radius: 100px;
+  border: 2px solid white;
+  margin-top: 1rem;
+  font-family: "Inria Serif", serif;
+  margin-bottom: 5rem;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: white;
+  filter: invert(1);
+  z-index: 1;
+}
+/* button container*/
+.btnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.btnContainer button {
+  padding: 20px 40px;
+  border-radius: 100px;
+  background-color: white;
+  font-family: "Inria Serif", serif;
+  border: none;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+/* ! right container */
+.rightContainer div{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30rem;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.rightContainer h1{
+    width: 100%;
+    font-size: calc(18vw + 4rem);
+    line-height: 15vw;
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+    font-family: "Inria Serif", serif;
+    mix-blend-mode: difference;
+  }
+
+.rightContainer h2{
+    width: 100%;
+    font-weight: 200;
+    letter-spacing: 20px;
+    mix-blend-mode: difference;
+  }
+
+/* responsive queries */
+@media only screen and (max-width: 1400px) {
+  .mainChild {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+  .leftContainer label {
+    justify-content: center;
+  }
+}
+
+/* focus and hover */
+.btnContainer button:hover{
+    background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.5);
+  }
+  .leftContainer input:focus{
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+    border: 2px solid white;
+    background-color: white;
+    color: black;
+    box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+  }

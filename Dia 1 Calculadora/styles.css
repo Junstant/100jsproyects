@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+/* ! global colors */
+:root{
+ --iconos:#7A7A7A;
+ --principal: #FF6DB3;
+ --botones: white;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 200ms;
+}
+
+body{
+    background-image: url(rsc/bgk.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', Courier, monospace;
+}
+
+/* ! main container */
+.mainContainer{
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainChild{
+    width: 40rem;
+    margin: 2rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 2em;
+    margin: 2rem;
+    border-radius: 20px;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(40px);
+}
+/* ! global rules */
+.flexContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* ! date and operation made */
+.firstContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+}
+.date{
+    color: var(--iconos);
+}
+.operationMade{
+    color: var(--iconos);
+}
+
+/* ! results and the horizontal rule */
+.secondContainer{
+    display: block;
+    text-align: end;
+}
+.secondContainer div h1{
+    font-size: 5rem;
+    font-weight: 600;
+}
+.secondContainer div h1{
+    font-size: 5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.secondContainer hr{
+    border: 1px solid #c3c3c3;
+}
+/* ! Erase button and backspace */
+
+.thirdContainer{
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin: 2rem 0px;
+}
+/* Erase button */
+.erase{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #FF5D53;
+    color: var(--botones);
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(255, 47, 47, 0.5);
+    width: calc(40% - 28px);
+}
+.erase div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.erase h1{
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+.erase svg{
+    fill: var(--botones);
+}
+/* backspace button */
+.backspace{
+    justify-content: end;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--botones);
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: calc(60% - 28px);
+    align-items: center;
+    backdrop-filter: blur(40px);
+}
+.backspace div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.backspace h1{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1em;
+    color: var(--iconos);
+}
+.backspace svg{
+    fill: var(--iconos);
+}
+/* ! Buttons */
+.forthContainer{
+    display: flex;
+    gap: 28px;
+}
+.forthRow{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 28px;
+}
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    width: calc(20% - 28px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 200ms;
+    font-family: 'Nunito', Courier, monospace;
+}
+.icon svg{
+    transition: all 1ms;
+}
+
+.Style1{
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--iconos);
+    fill: var(--iconos);
+}
+.Style2{
+    background-color: var(--botones);
+    color: var(--iconos);
+    fill: var(--iconos);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+}
+.Style2:last-child{
+    fill: var(--principal);
+}
+.Style2 svg{
+    transform: scale(0.7);
+}
+/* ! Equals buttons */
+.fifthContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin: 2rem 0px;
+    justify-content: center;
+}
+.fifthContainer div{
+    color: var(--principal);
+}
+.fifthContainer div:first-child{
+    width: calc(40% - 28px);
+}
+.fifthContainer div:nth-child(2){
+    width: calc(20% - 28px);
+}
+.Style3{
+    background-color: var(--principal);
+    fill: var(--botones);
+    box-shadow: 0px 5px 20px rgba(255, 42, 188, 0.5);
+    font-size: 2rem;
+    width: calc(40% - 28px);
+}
+
+
+/* ! ------------- HOVERS -------------- */
+.icon:hover{
+    background-color: var(--principal);
+    color: var(--botones);
+    fill: var(--botones);
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+.erase:hover{
+    background-color: var(--botones);
+    color: #FF5D53;
+    box-shadow: none;
+    cursor: pointer;
+    transform: translateY(-5px);
+    transform: rotate(3deg);
+}
+.erase:hover svg{
+    fill: #FF5D53;
+}
+.backspace:hover{
+    background-color: #FF5D53;
+    box-shadow: 0px 10px 20px rgba(255, 47, 47, 0.4);
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+.backspace:hover svg{
+    fill: var(--botones);
+}
+.backspace:hover h1{
+    color: var(--botones);
+}

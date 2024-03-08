@@ -1,0 +1,239 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* Image animation on change */
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes popInB {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    transform: rotate(-90deg);
+  }
+}
+
+/* Default css */
+:root {
+  --primary: #ffbc94;
+  --secondary: #fddfbc;
+  --tertiary: #24010f;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+}
+body * {
+  transition: all 200ms ease-in;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+button,
+span {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* father container */
+.mainFather {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 950px;
+}
+/* first child */
+.firstChild {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 4rem;
+  width: calc(50% - 8rem);
+  overflow: hidden;
+  flex-direction: column;
+}
+.firstChild h1:first-child {
+  color: var(--primary);
+  width: 100%;
+  text-align: center;
+  height: fit-content;
+  font-size: calc(1vw + 3rem);
+}
+.firstChild h1:nth-child(2) {
+  color: var(--tertiary);
+  width: 100%;
+  text-align: center;
+  height: fit-content;
+  font-size: calc(1vw + 3rem);
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+.firstChild img {
+  width: 50%;
+  margin-bottom: 4rem;
+}
+.imgAnimation {
+  width: 20%;
+  animation: popIn 400ms;
+}
+
+.firstChild div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.firstChild div:nth-child(1) {
+  padding: 4rem;
+}
+.firstChild button {
+  background: var(--primary);
+  color: var(--tertiary);
+  padding: 1.5rem 4rem;
+  border-radius: 100px;
+  border: none;
+  font-size: 1.5rem;
+}
+
+/* second child */
+.secondChild {
+  background: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  width: calc(25% - 4rem);
+}
+.secondChild h1 {
+  font-size: calc(2vw + 15rem);
+  font-weight: 900;
+  -webkit-text-stroke: 4px var(--tertiary);
+  color: var(--secondary);
+  transform: rotate(-90deg);
+  margin: 2rem;
+}
+.textAnimation {
+  animation: popInB 400ms;
+}
+/* third child */
+.thirdChild {
+  background: var(--tertiary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 4em 2rem;
+  width: calc(25% - 4rem);
+  align-items: flex-start;
+}
+.diceHistory {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-start;
+  row-gap: 20px;
+  height: 53rem;
+  align-content: flex-start;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.diceHistory::-webkit-scrollbar {
+  width: 0px;
+}
+.thirdChild > h2 {
+  color: var(--secondary);
+  font-size: calc(2vw + 1rem);
+  width: 100%;
+  text-align: center;
+  height: fit-content;
+  margin-bottom: 4rem;
+}
+.diceHistory div {
+  display: flex;
+  width: calc(100% - 1rem);
+  padding: 1rem;
+  justify-content: space-between;
+  border: 2px solid var(--secondary);
+  border-radius: 20px;
+  height: fit-content;
+  align-items: center;
+  animation: popIn 400ms;
+}
+
+.diceHistory span {
+  background: var(--secondary);
+  color: var(--tertiary);
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+}
+.diceHistory h2 {
+  color: var(--secondary);
+}
+/* hovers */
+.firstChild button:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+.firstChild img:hover {
+  transform: scale(0.96) rotate(5deg);
+  cursor: pointer;
+  animation: popIn 0.5 ease-in-out;
+}
+
+/* media querys */
+@media only screen and (max-width: 1230px) {
+  .firstChild {
+    width: 100%;
+  }
+  .secondChild {
+    width: calc(100% - 4rem);
+  }
+  .secondChild h1{
+    font-size: 25vw;
+  }
+  .thirdChild {
+    width: 100%;
+  }
+  .secondChild h1 {
+    transform: rotate(0deg);
+  }
+  @keyframes popInB {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+}
