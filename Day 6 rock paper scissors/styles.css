@@ -18,17 +18,20 @@ body {
 body * {
   transition: all 200ms ease-in;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 
 h1,
 h2,
 h3,
 h4,
 h5,
-p,
-button {
+p{
   font-family: Montserrat, sans-serif;
   margin: 0;
   padding: 0;
+  pointer-events: none;
 }
 
 /* parents */
@@ -56,12 +59,13 @@ button {
 .mainChild {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  width: clamp(30%, 100%, 40rem);
+  flex-wrap: nowrap;
+  width: clamp(30%, 100%, 80rem);
   gap: 20px;
 }
 /* left container */
-.leftContainer {
+.leftContainer,
+.rightContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,9 +75,11 @@ button {
   box-shadow: 20px 20px 30px rgba(44, 68, 85, 0.25);
   border-radius: 40px;
   flex-wrap: wrap;
+  width: 100%;
 }
 /* name */
-.nameWhite {
+.nameWhite,
+.nameBlack {
   display: flex;
   text-align: center;
   align-items: center;
@@ -85,11 +91,13 @@ button {
   box-shadow: 20px 20px 30px rgba(44, 68, 85, 0.25);
   border-radius: 40px;
 }
-.nameWhite h3 {
+.nameWhite h3,
+.nameBlack h3 {
   font-size: 2rem;
   font-weight: 400;
 }
-.nameContainerH {
+.nameContainerH,
+.nameContainerM {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -97,14 +105,16 @@ button {
 }
 
 /* score */
-.scoreContainerH {
+.scoreContainerH,
+.scoreContainerM {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   margin-bottom: 4rem;
 }
-.circleWhite {
+.circleWhite,
+.circleBlack {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,9 +126,9 @@ button {
   height: 15rem;
   align-content: center;
   text-align: center;
-
 }
-.circleWhite div:first-child {
+.circleWhite div:first-child,
+.circleBlack div:first-child {
   width: 100%;
   font-size: 3rem;
   color: #449beb;
@@ -131,27 +141,85 @@ button {
 
 /* choose next move text */
 
-.humanMove{
-    width: 100%;
-    text-align: center;
-    color: #A0A0A0;
-    margin-bottom: 2rem;
+.humanMove,
+.machineText {
+  width: 100%;
+  text-align: center;
+  color: #a0a0a0;
+  margin-bottom: 2rem;
 }
 
 /* human next move */
 
-.nextMoveH{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 40px;
+.nextMoveH,
+.nextMoveM {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 40px;
 }
-.nextMoveH div{
-    padding: 1.5rem;
-    background: linear-gradient(128.72deg, #ffffff 49.11%, #bdc6d5 103.35%);
-    box-shadow: 20px 20px 30px rgba(44, 68, 85, 0.25);
-    border-radius: 40px;
+.nextMoveH div {
+  padding: 1.5rem;
+  background: linear-gradient(128.72deg, #ffffff 49.11%, #bdc6d5 103.35%);
+  box-shadow: 20px 20px 30px rgba(44, 68, 85, 0.25);
+  border-radius: 40px;
+}
+
+/* right container */
+
+.rightContainer {
+  background: linear-gradient(128.72deg, #32383d 11.56%, #17181c 103.35%);
+  box-shadow: 20px 20px 30px rgba(74, 74, 74, 0.25);
+}
+.nameBlack,
+.circleBlack {
+  background: linear-gradient(128.72deg, #32383d 11.56%, #17181c 103.35%);
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.25);
+  border: 2px solid #2b2f32;
+}
+.nameBlack h3 {
+  color: #c6c6c6;
+}
+.circleBlack div:first-child {
+  color: #eb4444;
+  text-shadow: 0px 4px 30px rgba(235, 68, 68, 0.4);
+}
+.circleBlack div:nth-child(2) {
+  width: 100%;
+  color: #4f4f4f;
+}
+.nextMoveM div {
+  padding: 1.5rem;
+  background: linear-gradient(128.72deg, #32383d 11.56%, #17181c 103.35%);
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.25);
+  border: 2px solid #2b2f32;
+  border-radius: 40px;
+}
+
+/* hovers */
+
+.nextMoveH div:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+  box-shadow: 30px 30px 40px rgba(44, 68, 85, 0.4);
+}
+.nextMoveH div:hover::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #cde8ff; /* Cambia el color y la opacidad según tus preferencias */
+  border-radius: inherit;
+}
+
+/* media querys */
+@media only screen and (max-width: 1024px) {
+  .mainChild {
+    flex-wrap: wrap;
+  }
 }
