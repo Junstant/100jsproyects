@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 6 rock paper scissors</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="mainFather">
-        <div class="title">Rock Paper Scissors</div>
-        <div class="mainChild">
-            <div class="leftContainer">
-                <div class="nameWhite"><img src="rsc/face_with_monocle_3d 1.svg" alt="face_with_monocle_3d"><h3>You</h3></div>
-                <div class="circleWhite"><h1>5</h1><h3 class="scoreHuman">Score</h3></div>
-                <div class="humanMove"><p>Choose your next move:</p></div>
-                <div class="nextMove">
-                    <div class="rock"><img src="rsc/rock.svg" alt="rock"></div>
-                    <div class="paper"><img src="rsc/paper.svg" alt="paper"></div>
-                    <div class="scissors"><img src="rsc/scissor.svg" alt="scissors"></div>
-                </div>
+      <div class="title"><h3>Rock Paper Scissors</h3></div>
+      <div class="mainChild">
+        <div class="leftContainer">
+          <div class="nameContainerH">
+            <div class="nameWhite">
+              <img
+                src="rsc/face_with_monocle_3d 1.svg"
+                alt="face_with_monocle_3d"
+              />
+              <h3>You</h3>
             </div>
-            <div class="rightContainer">
-                <div class="nameBlack"><img src="rsc/robot_3d 1.svg" alt="robot_3d"><h3>Machine</h3></div>
-                <div class="circleBlack"><h1>5</h1><h3 class="scoreMachine">Score</h3></div>
-                <div class="machineText"><p>Choose your next move:</p></div>
-                <div class="nextMove">
-                    <div class="containerMoveMachine"><img src="rsc/rock.svg" alt="rock" class="machineMove"></div>
-                </div>
+          </div>
+          <div class="scoreContainerH">
+            <div class="circleWhite">
+              <div><h1>5</h1></div>
+              <div><h3 class="scoreHuman">SCORE</h3></div>
             </div>
+          </div>
+          <div class="humanMove"><p>Choose your next move:</p></div>
+          <div class="nextMoveH">
+            <div class="rock"><img src="rsc/rock.png" alt="rock" /></div>
+            <div class="paper"><img src="rsc/paper.png" alt="paper" /></div>
+            <div class="scissors">
+              <img src="rsc/scissor.png" alt="scissors" />
+            </div>
+          </div>
         </div>
-        <h4 class="humanScoreBack"></h4>
-        <h4 class="machineScoreBack"></h4>
+        <div class="rightContainer">
+          <div class="nameBlack">
+            <img src="rsc/robot_3d.svg" alt="robot_3d" />
+            <h3>Machine</h3>
+          </div>
+          <div class="circleBlack">
+            <h1>5</h1>
+            <h3 class="scoreMachine">Score</h3>
+          </div>
+          <div class="machineText"><p>Choose your next move:</p></div>
+          <div class="nextMoveM">
+            <div class="containerMoveMachine">
+              <img src="rsc/rock.png" alt="rock" class="machineMove" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4 class="humanScoreBack"></h4>
+      <h4 class="machineScoreBack"></h4>
     </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
