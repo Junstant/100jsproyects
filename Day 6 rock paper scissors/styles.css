@@ -1,6 +1,29 @@
 /* fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* animations */
+@keyframes rotate {
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* global colos */
 :root {
   --primary: #449beb;
@@ -215,6 +238,14 @@ p{
   height: 100%;
   border: 2px solid #cde8ff; /* Cambia el color y la opacidad según tus preferencias */
   border-radius: inherit;
+}
+
+.divAnimation{
+  animation: rotate 200ms;
+}
+
+.scoreAnimation{
+  animation: popIn 200ms;
 }
 
 /* media querys */

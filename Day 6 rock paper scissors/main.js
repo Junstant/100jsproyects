@@ -107,6 +107,19 @@ function machineMove(){
             scoreHuman.innerHTML = scoreGameHuman;
             scoreMachine.innerHTML = scoreGameMachine;
         }
+        // add animations
+            moveMachine.classList.add("divAnimation"); 
+            moveMachine.addEventListener("animationend", () => {
+            moveMachine.classList.remove("divAnimation"); 
+          });
+            scoreMachine.classList.add("scoreAnimation"); 
+            scoreMachine.addEventListener("animationend", () => {
+            scoreMachine.classList.remove("scoreAnimation"); 
+          });
+            scoreHuman.classList.add("scoreAnimation"); 
+            scoreHuman.addEventListener("animationend", () => {
+            scoreHuman.classList.remove("scoreAnimation"); 
+          });
     }, 1000)
     enableClick();
     gameStart = false;
