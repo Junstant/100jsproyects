@@ -4,11 +4,17 @@ const startButton = document.querySelector(".startButton");
 const pauseButton = document.querySelector(".pauseButton");
 const restartButton = document.querySelector(".restartButton");
 
+let isPaused = false; //defines the boleeans out the function to save the value
+let isStarted = false;
+let stopWatch; //declares the variable of the function
+let startTime; //saves the value of the start
+let timePaused = 0; 
+
 // Define the function
 function start() {
-    let startTime = Date.now(); // Saves the start time
-    setInterval(function() {
-        let elapsedTime = (Date.now() - startTime) / 1000; // Calculates the time elapsed in seconds
+    startTime = Date.now(); // Saves the start time
+    stopWatch = setInterval(function() {
+        let elapsedTime = (Date.now() - startTime + timePaused) / 1000; // Adjusted elapsed time for pause
         let actualSeconds = Math.floor(elapsedTime % 60); // Calculates seconds
         let actualMinutes = Math.floor(elapsedTime / 60); // Calculates minutes
 
@@ -23,4 +29,35 @@ function start() {
     }, 100);
 }
 
-startButton.addEventListener("click", start);
+// start button
+startButton.addEventListener("click", function(){
+    if (!isStarted) {
+        start();
+        isStarted = true;    
+    }
+});
+
+// pause button
+pauseButton.addEventListener("click", function () {
+    if (!isPaused) {
+        clearInterval(stopWatch);
+        timePaused += Date.now() - startTime; // Adjusted to accumulate pause time
+        pauseButton.classList.add("active");
+        startButton.classList.add("desactivated");
+    } else {
+        start(); 
+        pauseButton.classList.remove("active");
+        startButton.classList.remove("desactivated");
+    }
+    isPaused = !isPaused;
+});
+
+// reset button
+restartButton.addEventListener("click",function() {
+    clearInterval(stopWatch);
+    startTime = 0;
+    timePaused = 0;
+    isStarted = false;
+    isPaused = false;
+    timePast.innerHTML = "00:00:00"
+})

@@ -75,4 +75,13 @@ h1{
     background-color: var(--primary);
     fill: #FFFAE5;
     cursor: pointer;
+    transform: translateY(-5px);
+ }
+.active{
+    background-color: var(--primary);
+    fill: #FFFAE5;
+    cursor: pointer;
+ }
+.desactivated{
+    opacity: 20%;
  }
