@@ -1,0 +1,78 @@
+/* import google font */
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+
+/* global colors */
+:root{
+    --primary:#050505;
+}
+/* general rules */
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-image: url(rsc/bgk.png);
+    background-size: auto;
+    font-family: Jura, sans-serif;
+}
+body *{
+    transition: all 200ms ease-in;
+}
+svg{
+    transition: all 0ms ease-in;
+}
+.mainFather{
+    align-content: center;
+    width: 100%;
+    margin-top: 10rem;
+}
+.mainChild{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: clamp(25rem, 50rem, 100%);
+    margin: auto;
+    background-image: url(rsc/circle\ 1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: min(40rem);
+    z-index: 10;
+}
+.mainChild::after{
+    content: "";
+    position: fixed;
+    transform: translateX(10px);
+    border-radius: 50%;
+    width: max(39rem);
+    height: max(39rem);
+    backdrop-filter: blur(3px);
+    z-index: -1;
+}
+.firstChild, .secondChild{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.secondChild{
+    gap: 20px;
+}
+.secondChild div{
+   border: 1px solid var(--primary);
+   padding: 5px;
+   border-radius: 10px;
+}
+.secondChild div:nth-child(3){
+   padding: 12px 10px 5px 10px;
+}
+h1{
+    font-size: clamp(5rem, 7rem, 100%);
+}
+
+/* hovers */
+.secondChild div:hover{
+    background-color: var(--primary);
+    fill: #FFFAE5;
+    cursor: pointer;
+ }
