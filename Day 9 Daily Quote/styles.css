@@ -1,0 +1,18 @@
+/* import fonts from google */
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap');
+
+
+/* general rules */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: #151515;
+}
+
+h1, h4{
+    font-family: "Frank Ruhl Libre", serif;
+}
