@@ -1,18 +1,73 @@
 /* import fonts from google */
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap');
 
-
+*{
+    cursor: none;
+}
 /* general rules */
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: url(rsc/bgk.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
-
 :root{
     --primary: #151515;
 }
 
 h1, h4{
     font-family: "Frank Ruhl Libre", serif;
+    margin: 0;
+}
+/* custom cursor */
+.cursor-dot{
+    width: 5px;
+    height: 5px;
+    background-color: var(--primary);
+}
+.cursor-outline{
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--primary);
+    backdrop-filter: invert(1);
+}
+.cursor-dot,
+.cursor-outline{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+/* main containers */
+.mainFather{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25rem;
+}
+
+.mainChild{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: clamp(40rem, 70rem, 100%);
+    gap: 2rem;
+}
+
+.quoteDaily{
+    font-size: clamp(3rem, 9rem, 100%);
+    text-align: center;
+}
+.authorDaily{
+    font-size: clamp(1rem, 9rem, 100%);
+    font-style: italic;
+    text-align: center;
 }
