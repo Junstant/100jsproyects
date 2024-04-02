@@ -1,3 +1,4 @@
+// call elements from the dom
 const cursorDot = document.querySelector("[data-cursor-Outline]");
 const cursorOutline = document.querySelector("[data-cursor-Dot]");
 const body = document.querySelector(".body");
@@ -5,6 +6,10 @@ const hoverElements = document.querySelectorAll("[customHover]");
 const textArea = document.querySelector(".textArea");
 const characterCount = document.querySelector(".characterCount");
 const remainingCount = document.querySelector(".remainingCount");
+const header = document.querySelector(".header");
+const menuIcon = document.querySelector(".menuIcon");
+const offCanvasMenu = document.querySelector(".offCanvasMenu");
+const closeIcon = document.querySelector(".closeIcon");
 
 // * character counter
 let characterLimit = 100;
@@ -23,6 +28,23 @@ textArea.addEventListener("keyup",function() {
     characterCount.innerHTML = characterAmout;
     remainingCount.innerHTML = characterLimit - characterAmout;
 });
+
+// * sticky header
+window.addEventListener("scroll",function(){
+    if(window.scrollY > header.offsetTop){
+        header.classList.add("active");
+    }
+    else{
+        header.classList.remove("active");
+    }
+})
+
+// * off canvas menu
+let Menu = function closeOpen(){
+    offCanvasMenu.classList.toggle("menuActive")
+}
+menuIcon.addEventListener("click", Menu);
+closeIcon.addEventListener("click", Menu);
 
 //* infinite gallery
 const data = null;

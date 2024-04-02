@@ -45,9 +45,14 @@ b{
 .header{
     width: 100%;
     display: flex;
-    position:initial;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+}
+.active{
+    backdrop-filter: blur(10px);
 }
 .header div{
     margin: 2rem 4rem;
@@ -59,7 +64,43 @@ b{
     padding: 0;
     overflow: hidden;
     display: flex;
-    gap: 40px;
+    gap: 2rem;
+}
+
+/* off canvas menu */
+.offCanvasMenu{
+    display: flex;
+    position: fixed;
+    list-style-type: none;
+    background-color: var(--primary);
+    width: 500px;
+    height: 100%;
+    z-index: 40;
+    transform: translateX(-100%);
+    transition: all 500ms ease-in;
+}
+.menuActive{
+    transform: translateX(0%);
+}
+.offCanvasMenu ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    font-size: clamp(1rem, 1.5rem, 2rem);
+    margin: 0;
+    padding: 0;
+}
+.offCanvasMenu ul li{
+    padding: 3rem;
+    transition: all 400ms ease-in;
+}
+.offCanvasMenu ul span{
+    display: flex;
+    justify-content: flex-end;
+    fill: white;
+    padding: 1rem;
 }
 
 /* icons */
@@ -68,6 +109,10 @@ b{
     padding: 0rem 1rem;
     width: 30px;
     height: 30px;
+}
+.header div:nth-child(3){
+    display: flex;
+    flex-direction: row;
 }
 /* main container */
 .mainFather{
@@ -132,6 +177,7 @@ b{
     width: 25px;
     height: 25px;
     transition: all 500 ease-in;
+    mix-blend-mode: difference;
 }
 .cursorOutline{
     width: 60px;
@@ -147,7 +193,7 @@ b{
     left: 0px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    z-index: 1;
+    z-index: 50;
     pointer-events: none;
 }
 /* gallery */
@@ -168,3 +214,24 @@ b{
  border-radius: 100px;
  margin-bottom: 10rem;
 }
+
+/* hovers */
+.offCanvasMenu ul li:hover{
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+/* media querys */
+
+@media only screen and (max-width: 700px) {
+    .header div:nth-child(2){
+        display: none;
+    }
+    .offCanvasMenu{
+        width: 100%;
+    }
+    .header div{
+        margin: 2rem 1rem;
+        align-items: center;
+    }
+  }
