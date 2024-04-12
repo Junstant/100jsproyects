@@ -1,0 +1,161 @@
+/* import fonts from google */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* general rules */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4 ,h5{
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+}
+/* custom scroll bar */
+::-webkit-scrollbar{
+    width: 5px;
+    background: transparent;
+}
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+  }
+::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 10px;
+}
+
+/* fathers */
+.mainFather{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    align-content: center;
+    width: 100%;
+    margin: 3rem 0rem;
+}
+.mainChild{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 90%;
+}
+
+.firstChild{
+    width: 40%;
+    padding: 2rem;
+}
+.secondChild{
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.firstChild{
+    color: #979797;
+    text-align: center;
+    font-size: clamp(2rem, 3rem, 100%);
+}
+
+.badge , .generateButton{
+    padding: 1rem 4rem;
+    border-radius: 100px;
+    background-color: red;
+    border: none;
+    transition: all 300ms;
+}
+.badge{
+    padding: 5px 2rem;
+    line-height: 0;
+    margin: 0;
+    color: white;
+    mix-blend-mode: difference;
+}
+.badge b{
+    mix-blend-mode: difference;
+}
+.generateButton h1{
+    display: flex;
+    color: white;
+    mix-blend-mode: difference;
+    align-items: center;
+    gap: 5px;
+}
+.generateButton{
+    margin-top: 2rem;
+}
+.generateButton:hover{
+    filter: invert(1);
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+
+/* color containers */
+.colorContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    border-radius: 30px;
+    background-color: red;
+    transition: all 300ms;
+}
+.colorContainer div{
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    mix-blend-mode: difference;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: all 300ms;
+}
+.colorContainer div:hover{
+    filter: invert(1);
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+.colorContainer:hover{
+    filter: invert(1);
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+/* icons */
+.colorContainer div i{
+    transform: scale(1.4);
+    color: white;
+    mix-blend-mode: difference;
+}
+/* code */
+.hexCode{
+    margin: 3rem 1rem;
+    margin-bottom: 5rem;
+    font-size: clamp(3rem, 5rem, 100%);
+    letter-spacing: 0px;
+    mix-blend-mode: difference;
+    color: white;
+}
+
+@media only screen and (max-width:1300px){
+    .mainChild{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .secondChild{
+        width: 100%;
+        margin: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .firstChild{
+        width: 100%;
+    }
+}
+@media only screen and (max-width:880px){
+    .secondChild{
+        width: 100%;
+        margin: 0rem;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
