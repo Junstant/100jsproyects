@@ -4,25 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day 14 Drag and drop notes</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="mainFather">
         <div class="mainChild">
 
             <div class="header">
-                <h1>Day 14 Drag and drop notes</h1>
-                <div><i></i><span>Drag and drop</span></div>
+                <h1>Day 14</h1>
+                <div class="secondHeader"><i class="bi bi-hand-index-thumb"></i><span>Drag and drop <b>Notes</b></span></div>
             </div>
 
             <div class="notesContainer">
-                <div class="noteHeader"><h1></h1></div>
-                <div class="text"><textarea></textarea></div>
+                <div class="note">
+                <div class="noteHeader"><input type="text" placeholder="Your title"> <i class="bi bi-trash"></i></div>
+                <div class="text"><textarea placeholder="Type something..."></textarea></div>
                 <div class="footer">
-                    <div><i></i><span>Completed</span></div>
-                    <div><i></i><span>14/02/2023</span></div>
+                    <div><i class="bi bi-circle"></i><span>Completed</span></div>
+                    <div><i class="bi bi-calendar3"></i><input type="date" class="calendar"></div>
                 </div>
+             </div>
+             <div class="addNote">
+                <i class="bi bi-plus"></i>
             </div>
         </div>
+        </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>
