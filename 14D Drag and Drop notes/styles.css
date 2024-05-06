@@ -1,217 +1,243 @@
 /* import icons and fonts */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* general rules */
-body{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #EBEBEB;
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ebebeb;
 }
-body *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: all 0s ease;
 }
 /* custom scroll bar */
-body::-webkit-scrollbar{
-    width: 5px;
+body::-webkit-scrollbar {
+  width: 5px;
 }
-body::-webkit-scrollbar-thumb{
-    background-color: #FFB4F3;
-    border-radius: 5px;
+body::-webkit-scrollbar-thumb {
+  background-color: #ffb4f3;
+  border-radius: 5px;
 }
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
+  display: none;
+  -webkit-appearance: none;
+}
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
 }
 
 /* containers */
-
-.mainFather{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.mainFather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.mainChild{
-    width: 90%;
-    height: 80%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.mainChild {
+  width: 90%;
+  height: 80%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* header */
-.header{
-    padding: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+.header {
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.header h1{
-    font-size: 2rem;
-    color: white;
-    font-weight: 600;
-    background-color: #ff4ce1;
-    padding: 20px 50px;
-    border-radius: 100px;
+.header h1 {
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+  background-color: #ff4ce1;
+  padding: 20px 50px;
+  border-radius: 100px;
 }
 
-.secondHeader{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 2rem;
-    color: #a7a7a7;
-    font-weight: 300;
+.secondHeader {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 2rem;
+  color: #a7a7a7;
+  font-weight: 300;
 }
-.secondHeader i, .secondHeader b{
-    color: #ff4ce1;
+.secondHeader i,
+.secondHeader b {
+  color: #ff4ce1;
 }
 
 /* notes container */
 
-.notesContainer{
-    padding: 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 20px;
-    row-gap: 60px;
+.notesContainer {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+  row-gap: 60px;
 }
-
-.note, .addNote{
-    background-color: #fff;
-    border-radius: 40px;
-    padding: 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.3s;
-    height: 100%;
+.note,
+.addNote {
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
-.note:hover{
-    transform: translateY(-10px);
-    cursor: -moz-grab;
-    cursor: grab;
+.note {
+  transition: all 300ms ease;
+}
+.note > * {
+  transition: all 0ms ease;
+}
+.note:hover {
+  cursor: -moz-grab;
+  cursor: grab;
+  transform: scale(1.05);
 }
 /* note header */
-.noteHeader{
-    width: 100%;
-    border-bottom: 2px solid #dbdbdb; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;  
+.noteHeader {
+  width: 100%;
+  border-bottom: 2px solid #dbdbdb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0ms ease;
 }
-.noteHeader i{
-    font-size: 1.5rem;
-    color: #FFB4F3;
-    cursor: pointer;
+.noteHeader * {
+  transition: all 0ms ease;
+  background-color: transparent;
 }
-.noteHeader input[type="text"], .noteHeader input[type="text"]::placeholder{
-    margin: 10px;
-    color: #9c9c9c;
-    font-weight: 500;
-    border: 0px;
-    font-size: 1.5rem;
-    width: 100%;
+.noteHeader i {
+  font-size: 1.5rem;
+  color: #ffb4f3;
+  cursor: pointer;
+  transition: all 0s ease;
+  background-color: transparent;
 }
-.text{
-    margin-top: 30px;
+.noteHeader input[type="text"],
+.noteHeader input[type="text"]::placeholder {
+  margin: 10px;
+  color: #9c9c9c;
+  background-color: transparent;
+  font-weight: 500;
+  border: 0px;
+  font-size: 1.5rem;
+  width: 100%;
+  transition: all 0ms ease;
 }
-.text textarea{
-    font-size: 13px;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    border: none;
-    font-family: "Poppins", sans-serif;
-    color: #3f3f3f;
+.text {
+  margin-top: 30px;
+}
+.text textarea {
+  font-size: 13px;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  color: #3f3f3f;
+  background-color: transparent;
 }
 /* footer */
-.footer{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    color: #9c9c9c;
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  color: #9c9c9c;
 }
-.footer div{
-    display: flex;
-    gap: 10px;
+.footer div {
+  display: flex;
+  gap: 10px;
 }
-.footer input{
-    border: 0px;
+.footer input {
+  border: 0px;
+  background-color: transparent;
 }
 
-.completed{
-    background-color: #FFB4F3;
-    color: #fff;
-    border-color: white;
+.completed,
+.completed * {
+  background-color: #ffb4f3;
+  color: #fff;
+  border-color: white;
 }
-.completed *{
-    color: #fff;
-    border-color: white;
-    background-color: #FFB4F3;
+.completed * {
+  background: transparent;
 }
-.completed input[type="text"], .completed input[type="text"]::placeholder, .completed textarea, .completed textarea::placeholder, .completed i{
-    color: #fff;
-    border-color: white;
+.completed input[type="text"],
+.completed input[type="text"]::placeholder,
+.completed textarea,
+.completed textarea::placeholder,
+.completed i,
+.completed .calendar {
+  color: #fff;
+  border-color: white;
+  background-color: transparent;
 }
 
 /* add note */
-.addNote{
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    border: 2px dashed #FFB4F3;
-    color: #FFB4F3;
-    font-size: 4rem;
-    line-height: 0;
-    min-height: 400px;
+.addNote {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: 2px dashed #ffb4f3;
+  color: #ffb4f3;
+  font-size: 4rem;
+  line-height: 0;
+  min-height: 400px;
 }
-.addNote:hover{
-    cursor: pointer;
-
+.addNote:hover {
+  cursor: pointer;
 }
 
 /* media queries */
-@media screen and (max-width: 1230px){
-    .header{
-        text-align: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 40px;
-    }
-    .addNote{
-        min-height: 300px;
-    }
+@media screen and (max-width: 1230px) {
+  .header {
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .addNote {
+    min-height: 300px;
+  }
 }
-@media screen and (max-width: 768px){
-    .header{
-        text-align: center;
-        justify-content: center;
-    }
-    .mainChild{
-        width: 100%;
-    }
-
+@media screen and (max-width: 768px) {
+  .header {
+    text-align: center;
+    justify-content: center;
+  }
+  .mainChild {
+    width: 100%;
+  }
 }
-@media screen and (max-width: 468px){
-    .header{
-        padding: 0px;
-        justify-content: center;
-    }
-    .notesContainer{
-        padding: 10px;
-    }
+@media screen and (max-width: 468px) {
+  .header {
+    padding: 0px;
+    justify-content: center;
+  }
+  .notesContainer {
+    padding: 10px;
+  }
 }

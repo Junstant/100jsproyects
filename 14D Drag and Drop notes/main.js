@@ -2,8 +2,9 @@
 const notesContainer = document.querySelector('.notesContainer');
 const addNote = document.querySelector('.addNote');
 const trashCan = document.querySelector('.bi-trash');
-const completed = document.querySelector('.bi-circle');
+const completed = document.querySelector('.completedButton');
 const calendar = document.querySelector('.calendar');
+const note = document.querySelector('.note');
 
 // add event listener to addNote button
 addNote.addEventListener('click', addNoteFunction);
@@ -11,9 +12,10 @@ addNote.addEventListener('click', addNoteFunction);
 // add event listener to trashCan button
 trashCan.addEventListener('click', deleteNote);
 
-// add event listener to completed button
-completed.addEventListener('click', completeNote);
+let noteIdentifier = 0;
 
+
+//make the add note feature
 function addNoteFunction() {
     // create a new note
     const fragment = document.createDocumentFragment();
@@ -21,6 +23,7 @@ function addNoteFunction() {
     // create a div parent element
     const note = document.createElement('div');
     note.classList.add('note');
+    note.classList.add(`A`+`${noteIdentifier}`);
 
     // create a div header element
     const noteHeader = document.createElement('div');
@@ -49,6 +52,8 @@ function addNoteFunction() {
 
     //creates the 1st div inside footer
     const firstDiv = document.createElement('div');
+    firstDiv.classList.add('completedButton');
+    firstDiv.classList.add(`B`+`${noteIdentifier}`);
 
     //creates the span text inside the first div
     const spanText = document.createElement('span');
@@ -68,7 +73,6 @@ function addNoteFunction() {
     //creates the date input inside the second div
     const dateInput = document.createElement('input');
     dateInput.type = 'date';
-    dateInput.placeholder = 'Due date';
     dateInput.classList.add('calendar');
 
     // append the elements to the note header
@@ -100,4 +104,23 @@ function addNoteFunction() {
 
     // insert the framgent note before the addNote button
     notesContainer.insertBefore(fragment, addNote);
+
+    // add event listener to the completed button
+    let completedButton = note.querySelector('.completedButton');
+    completedButton.addEventListener('click', () => {
+        completeNote(note, noteIdentifier);
+    });
+
+    noteIdentifier++;
 }
+
+
+//make the completed note feature
+function completeNote(note, noteIdentifier) {
+    // Toggle 'completed' class for the specific note
+    note.classList.toggle('completed');
+}
+//make the delete note feature
+function deleteNote() {
+}
+
