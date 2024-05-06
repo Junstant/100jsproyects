@@ -98,6 +98,6 @@ function addNoteFunction() {
     // append the note to the fragment
     fragment.appendChild(note);
 
-    // append the fragment to the notes container
-    notesContainer.appendChild(fragment);
+    // insert the framgent note before the addNote button
+    notesContainer.insertBefore(fragment, addNote);
 }

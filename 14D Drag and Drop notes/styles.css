@@ -177,6 +177,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #FFB4F3;
     font-size: 4rem;
     line-height: 0;
+    min-height: 400px;
 }
 .addNote:hover{
     cursor: pointer;
