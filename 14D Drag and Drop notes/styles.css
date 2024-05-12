@@ -57,7 +57,7 @@ select:focus {
 .header {
   padding: 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -73,10 +73,12 @@ select:focus {
 .secondHeader {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
   font-size: 2rem;
   color: #a7a7a7;
   font-weight: 300;
+  width: calc(100%/3);
 }
 .secondHeader i,
 .secondHeader b {
@@ -161,9 +163,10 @@ select:focus {
 /* footer */
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 20px;
   color: #9c9c9c;
+  align-items: center;
 }
 .footer div {
   display: flex;
@@ -192,6 +195,11 @@ select:focus {
   color: #fff;
   border-color: white;
   background-color: transparent;
+}
+.bi-grip-horizontal{
+  color: #ffb4f3;
+  font: 2em sans-serif;
+  pointer-events: none;
 }
 
 /* add note */
@@ -229,6 +237,9 @@ select:focus {
     justify-content: center;
   }
   .mainChild {
+    width: 100%;
+  }
+  .secondHeader {
     width: 100%;
   }
 }

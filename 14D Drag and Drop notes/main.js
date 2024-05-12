@@ -67,6 +67,11 @@ function addNoteFunction() {
     //creates the 2nd div inside footer
     const secondDiv = document.createElement('div');
 
+    // creates the 3rd div inside footer
+    const thirdDiv = document.createElement('div');
+    const gripIcon = document.createElement('i');
+    gripIcon.classList.add('bi', 'bi-grip-horizontal');
+
     //creates the calendar icon inside the second div
     const calendarIcon = document.createElement('i');
     calendarIcon.classList.add('bi', 'bi-calendar3');
@@ -91,8 +96,12 @@ function addNoteFunction() {
     secondDiv.appendChild(calendarIcon);
     secondDiv.appendChild(dateInput);
 
+    // append the elements to the third div
+    thirdDiv.appendChild(gripIcon);
+
     // append the elements to the footer
     noteFooter.appendChild(firstDiv);
+    noteFooter.appendChild(thirdDiv);
     noteFooter.appendChild(secondDiv);
 
     // append the elements to the note
@@ -106,6 +115,9 @@ function addNoteFunction() {
     // insert the framgent note before the addNote button
     notesContainer.insertBefore(fragment, addNote);
 
+    // add initial status for the note
+    note.classList.add('uncompleted');
+
     // add event listener to the completed button
     let completedButton = note.querySelector('.completedButton');
     completedButton.addEventListener('click', () => {
@@ -114,58 +126,126 @@ function addNoteFunction() {
 
     noteIdentifier++;
 }
+// ! make the completed note feature
 
-
-//make the completed note feature
 function completeNote(note, noteIdentifier) {
     // Toggle 'completed' class for the specific note
     note.classList.toggle('completed');
+    // switch the icon
+    switchIcon(note, noteIdentifier);
 }
 
-// make the drag and drop feature
-function makeNoteDraggable(note) {
-    note.draggable = true;
-
-    note.addEventListener('dragstart', dragStart);
-    note.addEventListener('dragend', dragEnd);
+// ! switch icons when the note is completed/uncompleted
+function switchIcon(note, noteIdentifier) {
+    let initalStatus = note.classList.contains('completed') ? 1 : 0;
+    if (initalStatus == 1) {
+        let uncompletedIcon = note.querySelector('.bi-circle');
+        uncompletedIcon.classList.add('bi-check-circle');
+        uncompletedIcon.classList.remove('bi-circle');
+    } else {
+        let completedIcon = note.querySelector('.bi-check-circle');
+        completedIcon.classList.add('bi-circle');
+        completedIcon.classList.remove('bi-check-circle');
+    }
 }
 
-function dragStart(event) {
-    event.dataTransfer.setData('text/plain', event.target.id);
-    event.target.classList.add('dragging');
-}
+// ! make the drag and drop feature
+let draggedNote = null;
 
-function dragEnd(event) {
-    event.target.classList.remove('dragging');
-}
+notesContainer.addEventListener('dragstart', (e) => {
+    draggedNote = e.target;
+     //disable inside note elements to be draggable
+     note.querySelectorAll('input').forEach(input => input.setAttribute('draggable', false));
+     note.querySelectorAll('i').forEach(input => input.setAttribute('draggable', false));
+    setTimeout(() => {
+        e.target.style.display = 'none';
+    }, 0);
+});
 
-// add event listener to the note container for drag and drop
-notesContainer.addEventListener('dragover', dragOver);
-notesContainer.addEventListener('dragenter', dragEnter);
-notesContainer.addEventListener('dragleave', dragLeave);
-notesContainer.addEventListener('drop', drop);
+notesContainer.addEventListener('dragend', (e) => {
+    setTimeout(() => {
+        e.target.style.display = "block";
+        draggedNote = null;
+    }, 0);
+});
 
-function dragOver(event) {
-    event.preventDefault();
-}
+notesContainer.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    const afterElement = getDragAfterElement(notesContainer, e.clientY);
+    if (afterElement == null) {
+        notesContainer.appendChild(draggedNote);
+    } else {
+        notesContainer.insertBefore(draggedNote, afterElement);
+    }
+});
 
-function dragEnter(event) {
-    event.preventDefault();
-    notesContainer.classList.add('dragging-over');
-}
+const getDragAfterElement = (container, y) => {
+    const draggableElements = [...container.querySelectorAll('.note:not(.dragging)')];
+    return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+            return {
+                offset: offset,
+                element: child
+            };
+        } else {
+            return closest;
+        }
+    }, {
+        offset: Number.NEGATIVE_INFINITY
+    }).element;
+};
 
-function dragLeave(event) {
-    notesContainer.classList.remove('dragging-over');
-}
+//if the user holds the note for 2 seconds, the note will be dragged
+notesContainer.addEventListener('mousedown', (e) => {
+    let target = e.target;
+    let note = target.closest('.note');
+    if (!note) return;
+    let timer = setTimeout(() => {
+        note.classList.add('dragging');
+        note.setAttribute('draggable', true);
+    }, 2000);
+    notesContainer.addEventListener('mouseup', () => {
+        clearTimeout(timer);
+    });
+});
 
-function drop(event) {
-    event.preventDefault();
-    const noteId = event.dataTransfer.getData('text/plain');
-    const note = document.getElementById(noteId);
-    notesContainer.insertBefore(note, event.target);
-    notesContainer.classList.remove('dragging-over');
-}
+//make addnote always at the end
+notesContainer.addEventListener('dragend', (e) => {
+    notesContainer.appendChild(addNote);
+});
 
-// call makeNoteDraggable function for each note
-const allNotes = document.querySelectorAll('.note');
-allNotes.forEach(makeNoteDraggable);
+//save the notes to local storage when the page is refreshed
+window.addEventListener('beforeunload', () => {
+    let notes = notesContainer.querySelectorAll('.note');
+    let notesArray = [];
+    notes.forEach(note => {
+        let noteObject = {
+            title: note.querySelector('input').value,
+            text: note.querySelector('textarea').value,
+            date: note.querySelector('input[type="date"]').value,
+            status: note.classList.contains('completed') ? 1 : 0
+        };
+        notesArray.push(noteObject);
+    });
+    localStorage.setItem('notes', JSON.stringify(notesArray));
+});
+
+//load the notes from local storage when the page is refreshed
+window.addEventListener('load', () => {
+    let notesArray = JSON.parse(localStorage.getItem('notes'));
+    if (notesArray) {
+        notesArray.forEach(note => {
+            addNoteFunction();
+            let notes = notesContainer.querySelectorAll('.note');
+            let currentNote = notes[notes.length - 1];
+            currentNote.querySelector('input').value = note.title;
+            currentNote.querySelector('textarea').value = note.text;
+            currentNote.querySelector('input[type="date"]').value = note.date;
+            if (note.status == 1) {
+                completeNote(currentNote, noteIdentifier);
+            }
+        });
+    }
+});
