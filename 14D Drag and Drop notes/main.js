@@ -8,10 +8,7 @@ const note = document.querySelector('.note');
 
 // add event listener to addNote button
 addNote.addEventListener('click', addNoteFunction);
-
-// add event listener to trashCan button
-trashCan.addEventListener('click', deleteNote);
-
+// note identifier for each card
 let noteIdentifier = 0;
 
 
@@ -37,6 +34,10 @@ function addNoteFunction() {
     //create thrash icon
     const trashIcon = document.createElement('i');
     trashIcon.classList.add('bi', 'bi-trash');
+    // make the delete note clicked by trash feature
+    trashIcon.addEventListener('click', () => {
+        note.remove();
+    });
 
     // create the thext area container
     const textAreaContainer = document.createElement('div');
@@ -120,7 +121,51 @@ function completeNote(note, noteIdentifier) {
     // Toggle 'completed' class for the specific note
     note.classList.toggle('completed');
 }
-//make the delete note feature
-function deleteNote() {
+
+// make the drag and drop feature
+function makeNoteDraggable(note) {
+    note.draggable = true;
+
+    note.addEventListener('dragstart', dragStart);
+    note.addEventListener('dragend', dragEnd);
 }
 
+function dragStart(event) {
+    event.dataTransfer.setData('text/plain', event.target.id);
+    event.target.classList.add('dragging');
+}
+
+function dragEnd(event) {
+    event.target.classList.remove('dragging');
+}
+
+// add event listener to the note container for drag and drop
+notesContainer.addEventListener('dragover', dragOver);
+notesContainer.addEventListener('dragenter', dragEnter);
+notesContainer.addEventListener('dragleave', dragLeave);
+notesContainer.addEventListener('drop', drop);
+
+function dragOver(event) {
+    event.preventDefault();
+}
+
+function dragEnter(event) {
+    event.preventDefault();
+    notesContainer.classList.add('dragging-over');
+}
+
+function dragLeave(event) {
+    notesContainer.classList.remove('dragging-over');
+}
+
+function drop(event) {
+    event.preventDefault();
+    const noteId = event.dataTransfer.getData('text/plain');
+    const note = document.getElementById(noteId);
+    notesContainer.insertBefore(note, event.target);
+    notesContainer.classList.remove('dragging-over');
+}
+
+// call makeNoteDraggable function for each note
+const allNotes = document.querySelectorAll('.note');
+allNotes.forEach(makeNoteDraggable);
