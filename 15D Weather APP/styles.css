@@ -17,7 +17,6 @@ body{
     box-sizing: border-box;
     color: #727C8F;
 }
-
 .mainFather{
     width: 100%;
     display: flex;
@@ -25,7 +24,6 @@ body{
     align-items: center;
     flex-direction: column;
 }
-
 .mainChild{
     width: 80%;
     margin: 0rem 0;
@@ -33,15 +31,15 @@ body{
     justify-content: center;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
-
 .titles{
     margin-top: 8rem;
+    margin-bottom: 2rem;
     width: 80%;
     display: flex;
     justify-content: space-between;
 }
-
 /* columns general config */
 .container {
     display: flex;
@@ -52,7 +50,6 @@ body{
     box-shadow: -13.5496px 13.5496px 27.0991px rgba(217, 217, 217, 0.2), 13.5496px -13.5496px 27.0991px rgba(217, 217, 217, 0.2), -13.5496px -13.5496px 27.0991px rgba(255, 255, 255, 0.3), 13.5496px 13.5496px 33.8739px rgba(217, 217, 217, 0.9), inset 1.12913px 1.12913px 2.25826px rgba(255, 255, 255, 0.3), inset -1.12913px -1.12913px 2.25826px rgba(217, 217, 217, 0.5);
     border-radius: 20px;
 }
-
 /* ! first column */
 .firstColumn{
     width: 30%;
@@ -64,25 +61,34 @@ body{
 .dayCon{
     height: 30%;
     padding: 1rem;
+    font-size: 3rem;
+}
+.dateVal{
     font-size: 2rem;
 }
 .imgWeather{
     height: 50%;
     width: 50%;
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .weatherCon{
-    height: 70%;
+    height: calc(70% - 20px);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font-size: 4rem;
+    line-height: 50px;
 }
-
-
+.weatherDate{
+    font-size: 1.5rem;
+    text-align: center;
+}
 /* ! Secolnd column */
 .secondColumn{
-    width: 25%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -92,9 +98,11 @@ body{
 .dateCon, .tempCon, .senCon{
     height: 30%;
     padding: 1rem;
+    padding-left: 2rem;
     font-size: 1.5rem;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
 }
 .dateCon{
     gap: 10px;
@@ -117,6 +125,8 @@ body{
 .ph-thermometer{
     font-size: 3.5rem;
 }
+
+
 /* ! Third column */
 .thirdColumn{
     width: 20%;
@@ -126,15 +136,132 @@ body{
     height: 30rem;
     justify-content: space-between;
 }
+.thirdColumn i{
+    font-size: 3.5rem;
+}
 .humidityCon, .visibilityCon, .cloudCon{
     height: 30% ;
     padding: 1rem;
-    font-size: 2rem;
+    padding-left: 2rem;
+    font-size: 2.5rem;
     display: flex;
     flex-direction: row;
+    line-height: 30px;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.humidityCon div, .visibilityCon div, .cloudCon div{
+    display: flex;
+    flex-direction: column;
 }
 
+/* ! forth column */
 .fourthColumn{
     width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 30rem;
+    justify-content: space-between;
+}
+.windTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.ph-wind{
+    font-size: 7rem;
+}
+.windCon{
+    height: calc(70% - 20px);
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    
+}
+.icons div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    
+}
+.windSpeedVal, .angleVal, .gustVal{
+    font-size: 1rem;
+}
+.ph-speedometer, .ph-angle, .ph-trend-up{
+    font-size: 2rem;
+}
+.calendarCon{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+.calendarCon div span{
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+}
+.active{
+    background-color: #ff8c2d;
+    color: white;
+
+}
+.ubicationVal{
+    font-size: 2rem;
 }
 
+@media only screen and (max-width: 1570px) {
+    .mainChild{
+        width: 100%;
+    }
+    .container{
+        width: 100%;
+    }
+    .firstColumn{
+        width: 40%;
+    }
+    .secondColumn{
+        width: 40%;
+    }
+    .thirdColumn{
+        width: 40%;
+    }
+    .fourthColumn{
+        width: 40%;
+    }
+  }
+
+  
+@media only screen and (max-width: 750px) {
+    .mainChild{
+        width: 90%;
+    }
+    .container{
+        width: 100%;
+    }
+    .firstColumn{
+        width: 100%;
+    }
+    .secondColumn{
+        width: 100%;
+    }
+    .thirdColumn{
+        width: 100%;
+    }
+    .fourthColumn{
+        width: 100%;
+    }
+  }
