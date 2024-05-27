@@ -1,0 +1,58 @@
+/* import icons from Boostrap 5 */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+/* import Alata from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+/* general rules */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Alata', sans-serif;
+}
+
+/* colour palette */
+:root{
+    --primary-color: #59596F;
+    --secondary-color: #272631;
+    --tertiary-color: #23222D;
+    --quaternary-color: #FF0E39;
+    --quinary-color: #4B1C2D;
+    --stroke-color: #343445;
+}
+
+body{
+    background-color: #201F28;
+}
+
+/* fathers css */
+
+.mainFather{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.mainChild{
+    margin-top: 4rem;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+/* right and left containers */
+.leftContainer{
+    width: 50%;
+    display: flex;
+    position: sticky;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rightContainer{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
