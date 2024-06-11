@@ -1,0 +1,17 @@
+@media screen and (max-width: 500px) {
+  .mainChild {
+    width: 100%;
+  }
+  .conStyleOne{
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 1370px) {
+  .mainChild {
+    flex-direction: column;
+  }
+  .leftContainer, .rightContainer {
+    width: 100%;
+  }	
+
+}
