@@ -1,0 +1,53 @@
+/* button style one */
+.buttonStyleOne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 100px;
+    border: none;
+    padding: 1rem;
+    background-color: var(--secondary);
+    box-shadow: 10px 10px 20px rgba(255, 107, 107, 0.2), 10px 10px 30px rgba(255, 107, 107, 0.2), 10px 20px 30px rgba(255, 107, 107, 0.2), 10px 20px 30px rgba(255, 107, 107, 0.2);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    gap: 10px;
+}
+.buttonStyleOne i{
+    font-size: 20px;
+}
+.buttonStyleOne:hover{
+    background-color: #ff4949;
+    transform: translateY(-5px);
+}
+
+
+/* input style one */
+.inputStyleOne{
+    width: 100%;
+    border-radius: 100px;
+    border: 2px solid var(--primary);
+    padding: 1rem;
+    transition: all 0.3s;
+}
+.inputStyleOne::placeholder{
+    color: var(--primary);
+}
+
+.inputStyleOne:focus{
+    outline: none;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+
+/* label */
+.labelStyleOne{
+    font-weight: 600;
+    color: #727C8F;
+    background: white;
+    padding: 5px;
+    width: fit-content;
+    border-radius: 50px;
+}
