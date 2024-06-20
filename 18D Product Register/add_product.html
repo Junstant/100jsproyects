@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 18 Product list</title>
+    <link rel="stylesheet" href="styles/add_products.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <!-- phosfor icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <main class="mainFather">
+      <section class="mainChild">
+        <h1>Welcome back! 😉</h1>
+        <h2>Add Product</h2>
+        <form class="productForm">
+          <div class="firstRow">
+            <div class="halfRow">
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" class="inputStyleOne" required placeholder="Product name..." />
+            </div>
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price" class="inputStyleOne" required placeholder="Enter a price..." />
+          </div>
+          <div class="secondRow">
+            <label for="brand">Brand</label>
+            <input type="text" name="brand" id="brand" class="inputStyleOne" required placeholder="Brand..." />
+            <label for="category">Category:</label>
+            <select name="category" id="category" class="inputStyleOne" required>
+              <option value="1">Electronics</option>
+              <option value="2">Clothes</option>
+              <option value="3">Books</option>
+              <option value="4">Furniture</option>
+            </select>
+          </div>
+          <div class="thirdRow">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" cols="20" rows="5" required></textarea>
+          </div>
+          <input type="submit" class="buttonStyleOne" value="Add Product" />
+          <button class="buttonStyleTwo">View all the products</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
