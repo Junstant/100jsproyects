@@ -1,108 +1,131 @@
 /* import fonts from google */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 /* general rules */
 
-:root{
-    --primary: #727C8F;
-    --secondary: #ff49b9;
+:root {
+  --primary: #727c8f;
+  --secondary: #ff49b9;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
-body{
-    background-color: #e9e9e9;
-    color: #727C8F;
+body {
+  background-color: #e9e9e9;
+  color: #727c8f;
 }
-
 
 /* button style one */
-.buttonStyleOne{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border-radius: 100px;
-    border: none;
-    padding: 1rem;
-    background-color: var(--secondary);
-    box-shadow: 10px 10px 20px rgba(255, 107, 211, 0.2), 10px 10px 30px rgba(255, 107, 206, 0.2), 10px 20px 30px rgba(255, 107, 206, 0.2), 10px 20px 30px rgba(255, 107, 223, 0.2);
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-    gap: 10px;
+.buttonStyleOne,
+.buttonStyleTwo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  border-radius: 100px;
+  border: none;
+  padding: 1rem;
+  background-color: var(--secondary);
+  box-shadow: 10px 10px 20px rgba(255, 107, 211, 0.2), 10px 10px 30px rgba(255, 107, 206, 0.2), 10px 20px 30px rgba(255, 107, 206, 0.2), 10px 20px 30px rgba(255, 107, 223, 0.2);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  gap: 10px;
 }
-.buttonStyleOne i{
-    font-size: 20px;
+.buttonStyleOne i {
+  font-size: 20px;
 }
-.buttonStyleOne:hover{
-    background-color: #ff49b9;
-    transform: translateY(-5px);
+.buttonStyleOne:hover {
+  background-color: #ff49b9;
+  transform: translateY(-5px);
 }
 /* button style one */
-.buttonStyleTwo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border-radius: 100px;
-    border: none;
-    padding: 1rem;
-    background-color: white;
-    color: var(--primary);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-    gap: 10px;
+.buttonStyleTwo {
+  box-shadow: 10px 10px 30px #3f434b41;
+  background: white;
+  color: var(--primary);
 }
-.buttonStyleTwo i{
-    font-size: 20px;
+.buttonStyleTwo i {
+  font-size: 20px;
 }
-.buttonStyleTwo:hover{
-    background-color: #ff49b9;
-    transform: translateY(-5px);
+.buttonStyleTwo:hover {
+  color: white;
+  background-color: #ff49b9;
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 20px rgba(255, 107, 211, 0.2), 10px 10px 30px rgba(255, 107, 206, 0.2), 10px 20px 30px rgba(255, 107, 206, 0.2), 10px 20px 30px rgba(255, 107, 223, 0.2);
 }
-
 
 /* input style one */
-.inputStyleOne{
-    width: 100%;
-    border-radius: 100px;
-    border: 2px solid var(--primary);
-    padding: 1rem;
-    transition: all 0.3s;
+.inputStyleOne,
+.textAreaStyleOne {
+  width: 100%;
+  border-radius: 100px;
+  border: 1px var(--primary) solid;
+  padding: 1rem;
+  transition: all 0.3s;
 }
-.inputStyleOne::placeholder{
-    color: var(--primary);
+.inputStyleOne::placeholder,
+.textAreaStyleOne::placeholder {
+  color: var(--primary);
 }
 
-.inputStyleOne:focus{
-    outline: none;
-    border: 2px solid var(--secondary);
-    color: var(--secondary);
+.inputStyleOne:focus,
+.textAreaStyleOne:focus {
+  outline: none;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
 }
 
 /* label */
-.labelStyleOne{
-    font-weight: 600;
-    color: #727C8F;
-    background: white;
-    padding: 5px;
-    width: fit-content;
-    border-radius: 50px;
+.labelStyleOne {
+  font-weight: 600;
+  color: #b5bbc7;
+  background: white;
+  z-index: 1;
+  padding: 10px 5px;
+  width: fit-content;
+  border-radius: 50px;
+  margin-bottom: -9px;
+  margin-left: 20px;
 }
 
 /* container style one */
-.conStyleOne{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    padding: 5rem;
-    gap: 1rem;
-    border-radius: 40px;
-    box-shadow: -14px 14px 27px rgba(217, 217, 217, 0.2), 14px -14px 27px rgba(217, 217, 217, 0.2), -14px -14px 27px rgba(255, 255, 255, 0.3), 14px 14px 34px rgba(217, 217, 217, 0.9), inset 2px 2px 3px rgba(255, 255, 255, 0.3), inset -2px -2px 3px rgba(217, 217, 217, 0.5);
+.conStyleOne {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 3rem;
+  gap: 1rem;
+  border-radius: 40px;
+  box-shadow: -14px 14px 27px rgba(217, 217, 217, 0.2), 14px -14px 27px rgba(217, 217, 217, 0.2), -14px -14px 27px rgba(255, 255, 255, 0.3), 14px 14px 34px rgba(217, 217, 217, 0.9),
+    inset 2px 2px 3px rgba(255, 255, 255, 0.3), inset -2px -2px 3px rgba(217, 217, 217, 0.5);
 }
+
+.textAreaStyleOne {
+  resize: none;
+  border-radius: 20px;
+}
+
+/* ? card products */
+.productDescPrev {
+  height: fit-content;
+  width: 30rem;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.labelCard {
+  background-color: var(--secondary);
+  padding: 10px 10px;
+  color: white;
+  border-radius: 100px;
+  font-weight: 300;
+  box-shadow: 10px 10px 20px rgba(255, 107, 211, 0.2), 10px 10px 30px rgba(255, 107, 206, 0.2), 10px 20px 30px rgba(255, 107, 206, 0.2), 10px 20px 30px rgba(255, 107, 223, 0.2);
+  width: fit-content;
+}
+

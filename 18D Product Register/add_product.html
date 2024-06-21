@@ -6,42 +6,69 @@
     <title>Day 18 Product list</title>
     <link rel="stylesheet" href="styles/add_products.css" />
     <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
     <!-- phosfor icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
   <body>
     <main class="mainFather">
-      <section class="mainChild">
+      <section class="mainChild conStyleOne">
         <h1>Welcome back! 😉</h1>
-        <h2>Add Product</h2>
+        <h2>Add a product <i class="ph ph-package"></i></h2>
         <form class="productForm">
           <div class="firstRow">
             <div class="halfRow">
-              <label for="name">Name:</label>
-              <input type="text" name="name" id="name" class="inputStyleOne" required placeholder="Product name..." />
+              <label for="name" class="labelStyleOne">Name:</label>
+              <input type="text" name="name" id="name" class="inputStyleOne productName" required placeholder="Product name..." />
             </div>
-            <label for="price">Price:</label>
-            <input type="number" name="price" id="price" class="inputStyleOne" required placeholder="Enter a price..." />
+            <div class="halfRow">
+              <label for="price" class="labelStyleOne">Price:</label>
+              <input type="number" name="price" id="price" class="inputStyleOne productPrice" required placeholder="Enter a price..." />
+            </div>
           </div>
           <div class="secondRow">
-            <label for="brand">Brand</label>
-            <input type="text" name="brand" id="brand" class="inputStyleOne" required placeholder="Brand..." />
-            <label for="category">Category:</label>
-            <select name="category" id="category" class="inputStyleOne" required>
-              <option value="1">Electronics</option>
-              <option value="2">Clothes</option>
-              <option value="3">Books</option>
-              <option value="4">Furniture</option>
-            </select>
+            <div class="halfRow">
+              <label for="brand" class="labelStyleOne">Brand</label>
+              <input type="text" name="brand" id="brand" class="inputStyleOne productBrand" required placeholder="Brand..." />
+            </div>
+            <div class="halfRow">
+              <label for="category" class="labelStyleOne">Category:</label>
+              <select name="category" id="category" class="inputStyleOne productCategory" required>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Books">Books</option>
+                <option value="Furniture">Furniture</option>
+              </select>
+            </div>
           </div>
           <div class="thirdRow">
-            <label for="description">Description:</label>
-            <textarea name="description" id="description" cols="20" rows="5" required></textarea>
+            <label for="description" class="labelStyleOne">Description:</label>
+            <textarea name="description" id="description" class="textAreaStyleOne productDescription" cols="20" rows="5" required placeholder="Enter a short description..."></textarea>
           </div>
-          <input type="submit" class="buttonStyleOne" value="Add Product" />
-          <button class="buttonStyleTwo">View all the products</button>
+          <div class="fourthRow">
+            <button type="submit" class="buttonStyleOne addProduct"><i class="ph ph-plus-circle"></i> Add product</button>
+            <span type="button" onclick="redirect()" class="buttonStyleTwo"><i class="ph ph-eye"></i> View all the products</span>
+          </div>
         </form>
       </section>
+      <section class="secondChild">
+        <h2>Product Preview <i class="ph ph-package"></i></h2>
+        <div class="conStyleOne">
+          <div class="rowA">
+            <h2 class="titlePrev">Product title</h2>
+
+            <h2 class="pricePrev">Price</h2>
+          </div>
+          <div class="rowB">
+            <textarea cols="20" rows="3" placeholder="Your description" class="productDescPrev textAreaStyleOne" disabled ></textarea>
+          </div>
+          <div class="rowC">
+            <h4 class="categoryPrev labelCard">Category</h4>
+            <h4 class="brandPrev labelCard">Brand</h4>
+          </div>
+        </div>
+      </section>
     </main>
+    <script src="scripts/add_products.js"></script>
   </body>
 </html>

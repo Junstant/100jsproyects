@@ -1,0 +1,15 @@
+.mainChild{
+    width: clamp(700px, 70%, 100%);
+}
+
+.productContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+.titleHeader{
+    margin-bottom: 3rem;
+}
+.titleHeader span{
+   width: 100%;
+}

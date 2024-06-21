@@ -1,0 +1,48 @@
+@media screen and (200px <= width <= 1030px) {
+  .mainChild,
+  .secondChild {
+    width: 100%;
+  }
+  .halfRow {
+    width: 100%;
+  }
+  .firstRow,
+  .secondRow,
+  .fourthRow {
+    flex-direction: column;
+  }
+  .buttonStyleOne,
+  .buttonStyleTwo {
+    width: 100%;
+  }
+  .mainChild h1 {
+    font-size: 3rem;
+  }
+  .mainFather {
+    flex-direction: column;
+  }
+  .rowA,
+  .rowC {
+    flex-direction: column;
+    text-align: center;
+  }
+  .productDescPrev {
+    text-align: center;
+  }
+  .labelCard {
+    align-self: center;
+  }
+  .productContainer{
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (1030px <= width <= 1300px) {
+  .mainChild h1 {
+    font-size: 3rem;
+  }
+  .productContainer{
+    display: flex;
+    flex-direction: column;
+  }
+}
