@@ -12,6 +12,7 @@ products.forEach((product, index) => {
     const rowA = document.createElement('div');
     const rowB = document.createElement('div');
     const rowC = document.createElement('div');
+    const rowD = document.createElement('div');
 
     div.classList.add('conStyleOne');
     rowA.classList.add('rowA');
@@ -24,7 +25,7 @@ products.forEach((product, index) => {
 
     const price = document.createElement('h2');
     price.classList.add('pricePrev');
-    price.textContent = product.price;
+    price.textContent = `$${product.price}`;
 
     rowA.appendChild(title);
     rowA.appendChild(price);
@@ -43,7 +44,20 @@ products.forEach((product, index) => {
     brand.classList.add('brandPrev', 'labelCard');
     brand.textContent = product.brand;
 
+    const addIcon = document.createElement('i');
+    addIcon.classList.add('ph', 'ph-shopping-cart', 'addIcon', 'labelCard');
+    addIcon.addEventListener('click', () => {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+    });
+    const text = document.createElement('p');
+    text.innerHTML = 'Add to cart';
+    addIcon.appendChild(text);
+
+
     rowC.appendChild(category);
+    rowC.appendChild(addIcon);
     rowC.appendChild(brand);
 
     div.appendChild(rowA);
@@ -57,4 +71,7 @@ products.forEach((product, index) => {
 
 function redirect() {
     window.location.href = "add_product.html";
+}
+function redirect2() {
+    window.location.href = "cart.html";
 }

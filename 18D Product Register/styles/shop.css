@@ -8,8 +8,23 @@
     gap: 40px;
 }
 .titleHeader{
+    display: flex;
+    flex-direction: column;
     margin-bottom: 3rem;
+    gap: 30px;
 }
 .titleHeader span{
    width: 100%;
+}
+
+.addIcon{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    transition: all 0.3s;
+}
+.addIcon:hover{
+    cursor: pointer;
+    filter: hue-rotate(-30deg);
 }
