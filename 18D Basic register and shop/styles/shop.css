@@ -23,8 +23,14 @@
     gap: 10px;
     align-items: center;
     transition: all 0.3s;
+    padding: 10px 20px;
 }
-.addIcon:hover{
+.addIcon:hover, .plus:hover, .minus:hover{
     cursor: pointer;
     filter: hue-rotate(-30deg);
+}
+
+.plus, .minus{
+    display: flex;
+    align-items: center;
 }

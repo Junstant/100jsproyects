@@ -72,6 +72,7 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 20px;
+  align-items: center;
 }
 .rowA h2 {
   margin: 0;

@@ -33,14 +33,24 @@ const errorMsg = {
     category: 'Please select a category',
     description: 'Description must be at least 10 characters'
 }
+
+// index generator with local storage
+function indexGenerator(){
+    let index = JSON.parse(localStorage.getItem('index')) || 0;
+    return index;
+}
+
 // add product function
 function addProduct() {
+    let index = indexGenerator();
     const product = {
         title: productName.value,
         price: productPrice.value,
         brand: productBrand.value,
         category: productCategory.value,
-        description: productDescription.value
+        description: productDescription.value,
+        amount: 1,
+        index: index,
     }
     // check validations
     if (!titleValidation(product.title)) {
@@ -68,6 +78,9 @@ function addProduct() {
     products.push(product);
     localStorage.setItem('products', JSON.stringify(products));
     alert('Product added successfully');
+
+    index++;
+    localStorage.setItem('index', JSON.stringify(index));
 }
 
 // add event listener
